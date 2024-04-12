@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/265046582196926712/48018a467bb44fdbb23ce4cd53c4558c/artifacts
+end_time: 1712940351496
+entry_point_name: ''
+experiment_id: '265046582196926712'
+lifecycle_stage: active
+run_id: 48018a467bb44fdbb23ce4cd53c4558c
+run_name: lightgbm
+run_uuid: 48018a467bb44fdbb23ce4cd53c4558c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712940351432
+status: 3
+tags: []
+user_id: valde

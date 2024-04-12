@@ -1,0 +1,43 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.4.1.post1
+mlflow_version: 2.11.3
+model_size_bytes: 51554302
+model_uuid: 80bde31ca727401eb1ff8691c498615e
+run_id: 27733d518d7243d9898b1ccbb0de8278
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "square_feet", "required": false}, {"type":
+    "long", "name": "accommodates", "required": true}, {"type": "double", "name":
+    "cleaning_fee", "required": false}, {"type": "double", "name": "beds", "required":
+    false}, {"type": "long", "name": "availability_30", "required": true}, {"type":
+    "double", "name": "bedrooms", "required": false}, {"type": "long", "name": "availability_60",
+    "required": true}, {"type": "long", "name": "availability_90", "required": true},
+    {"type": "long", "name": "availability_365", "required": true}, {"type": "double",
+    "name": "security_deposit", "required": false}, {"type": "double", "name": "bathrooms",
+    "required": false}, {"type": "long", "name": "guests_included", "required": true},
+    {"type": "string", "name": "neighbourhood", "required": false}, {"type": "string",
+    "name": "neighbourhood_group_cleansed", "required": true}, {"type": "string",
+    "name": "property_type", "required": true}, {"type": "string", "name": "room_type",
+    "required": true}, {"type": "long", "name": "amenities", "required": true}, {"type":
+    "double", "name": "X", "required": true}, {"type": "double", "name": "Y", "required":
+    true}, {"type": "double", "name": "Z", "required": true}, {"type": "long", "name":
+    "date", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-04-12 16:22:36.751521'

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/265046582196926712/9fa648de1d504f11a7a00d70bf71af82/artifacts
+end_time: 1712933215223
+entry_point_name: ''
+experiment_id: '265046582196926712'
+lifecycle_stage: active
+run_id: 9fa648de1d504f11a7a00d70bf71af82
+run_name: random_forest
+run_uuid: 9fa648de1d504f11a7a00d70bf71af82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1712933215106
+status: 3
+tags: []
+user_id: valde
