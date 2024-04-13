@@ -9,6 +9,10 @@ Posteriormente, se intenta construir un modelo de `machine learning` para intent
 
 - **dataset_nuevo**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
 
+- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc).
+
+- **mlruns**: Directorio donde se recopilan los parámetros y métricas de cada ejecución realizada en el experimento `MLflow` del proyecto.
+
 - **Airbnb.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios.
 
 - **Informe_Airbnb_Madrid.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue/productivización.
