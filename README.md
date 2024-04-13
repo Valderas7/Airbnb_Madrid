@@ -9,7 +9,7 @@ Posteriormente, se intenta construir un modelo de `machine learning` para intent
 
 - **dataset_nuevo**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
 
-- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc).
+- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc.
 
 - **mlruns**: Directorio donde se recopilan los parámetros y métricas de cada ejecución realizada en el experimento `MLflow` del proyecto.
 
