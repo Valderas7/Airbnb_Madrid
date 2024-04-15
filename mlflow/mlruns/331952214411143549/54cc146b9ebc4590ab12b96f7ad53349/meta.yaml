@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/331952214411143549/54cc146b9ebc4590ab12b96f7ad53349/artifacts
+end_time: 1713195628231
+entry_point_name: ''
+experiment_id: '331952214411143549'
+lifecycle_stage: active
+run_id: 54cc146b9ebc4590ab12b96f7ad53349
+run_name: decision_tree
+run_uuid: 54cc146b9ebc4590ab12b96f7ad53349
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713195031861
+status: 3
+tags: []
+user_id: valde
