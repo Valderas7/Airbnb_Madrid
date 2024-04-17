@@ -2,7 +2,9 @@
 
 En este repositorio se realiza un análisis exploratorio de datos (`EDA`) de la situación de los alquileres en la ciudad de Madrid. Se investiga la situación general del mercado en la ciudad y se analizan los precios de las publicaciones publicadas en la web. 
 
-Posteriormente, se intenta construir un modelo de `machine learning` para intentar predecir lo mejor posible el precio diario de un alquiler en la ciudad:
+Posteriormente, se construyen varios modelos de `machine learning` para intentar predecir el precio diario de un alquiler en la ciudad, registrando los parámetros, las métricas y los modelos con `MLflow`.
+
+Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos entrenados en un servicio web y se despliega un servicio de inferencia con `KServe` en un cluster local de `Kubernetes` con `Minikube`.
 
 
 ## Estructura
