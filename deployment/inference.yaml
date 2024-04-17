@@ -1,0 +1,16 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "airbnb-regressor"
+  namespace: "kserve-deploy"
+spec:
+  predictor:
+    containers:
+      - name: "airbnb-regressor"
+        image: "valderas7/madrid_airbnb_regressor:decision_tree"
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        env:
+          - name: PROTOCOL
+            value: "v2"
