@@ -10,12 +10,20 @@ Posteriormente, se intenta construir un modelo de `machine learning` para intent
 - **dataset_nuevo**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
 
 
+- **deployment**: Directorio donde se recopilan los archivos a usar para el despliegue:
+	- **local**: Código para la inferencia cuando se sirve el modelo en una `API REST` local. 
+	- **production**: Carpeta donde se recopila el `.yaml` para la creación del servicio de inferencia en `Kubernetes`, así como un archivo `.json` en formato V2 para usar como datos de entrada en el servicio de inferencia en producción de `Kubernetes`.
+
+
+- **img**: Carpeta donde se recopilan un par de imágenes del proyecto.
+
+
 - **mlflow**: Directorio donde se recopilan las carpetas por usar `MLflow`: 
 	- **mrlruns**: Directorio donde se recopilan los parámetros y métricas de cada ejecución realizada en el experimento `MLflow` del proyecto. 
 	- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc.
 
 
-- **Airbnb.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios.
+- **Airbnb.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios, además de los registros de los modelos con `MLflow` y la guía para servir el modelo en una API y el posterior despliegue en `Kubernetes`.
 
 
-- **Informe_Airbnb_Madrid.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue/productivización.
+- **Informe.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue/productivización (no actualizado).
