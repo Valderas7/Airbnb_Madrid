@@ -4,7 +4,8 @@ import pandas as pd
 import numpy as np
 
 # URL donde se sirve el modelo
-url = 'http://127.0.0.1:1234/invocations'
+url = 'http://127.0.0.1:1234/invocations'   # Local
+url = 'http://127.0.0.1:9090/invocations'   # Docker
 
 # Header para contenido de tipo JSON
 headers = {'Content-type': 'application/json'}
