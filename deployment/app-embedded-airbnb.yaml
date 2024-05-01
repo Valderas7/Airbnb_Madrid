@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-embedded-airbnb-service
+spec:
+  selector:
+    app: app-embedded-airbnb-pods
+  ports:
+    - protocol: "TCP"
+      port: 3000
+      targetPort: 8501
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-embedded-airbnb-deployment
+spec:
+  selector:
+    matchLabels:
+      app: app-embedded-airbnb-pods
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: app-embedded-airbnb-pods
+    spec:
+      containers:
+        - name: app-embedded-airbnb-container
+          image: valderas7/app-embedded-airbnb:v1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501

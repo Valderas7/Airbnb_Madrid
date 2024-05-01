@@ -9,7 +9,10 @@ Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos en
 
 ## Estructura
 
-- **dataset_nuevo**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
+- **app**: Conjunto de archivos utilizados para la realización de la aplicación de `Streamlit` con el modelo de `scikit-learn` guardado con `MLflow` en formato `pickle`.
+
+
+- **data**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
 
 
 - **deployment**: Directorio donde se recopilan los archivos a usar para el despliegue:
@@ -25,7 +28,7 @@ Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos en
 	- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc.
 
 
-- **Airbnb.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios, además de los registros de los modelos con `MLflow` y la guía para servir el modelo en una API y el posterior despliegue en `Kubernetes`.
-
-
 - **Informe.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue/productivización (no actualizado).
+
+
+- **train.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios, además de los registros de los modelos con `MLflow`.
