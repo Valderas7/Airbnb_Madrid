@@ -9,6 +9,7 @@ spec:
     - protocol: "TCP"
       port: 3000
       targetPort: 8501
+      nodePort: 30008
   type: LoadBalancer
 ---
 apiVersion: apps/v1
