@@ -4,7 +4,7 @@ En este repositorio se realiza un análisis exploratorio de datos (`EDA`) de la 
 
 Posteriormente, se construyen varios modelos de `machine learning` para intentar predecir el precio diario de un alquiler en la ciudad, registrando los parámetros, las métricas y los modelos con `MLflow`.
 
-Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos entrenados en un servicio web y se despliega un servicio de inferencia con `KServe` en un cluster local de `Kubernetes` con `Minikube`.
+Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos entrenados en una aplicación web de `Streamlit` y se despliega dicha imagen mediante un despliegue y un servicio en un `cluster` local de `Kubernetes` con `Minikube`.
 
 
 ## Estructura
@@ -15,9 +15,7 @@ Por último, se crea una imagen de `Docker` donde se sirve uno de los modelos en
 - **data**: Conjunto de archivos utilizados para la realización del análisis exploratorio y la construcción del modelo.
 
 
-- **deployment**: Directorio donde se recopilan los archivos a usar para el despliegue:
-	- **local**: Código para la inferencia cuando se sirve el modelo en una `API REST` local. 
-	- **production**: Carpeta donde se recopila el `.yaml` para la creación del servicio de inferencia en `Kubernetes`, así como un archivo `.json` en formato V2 para usar como datos de entrada en el servicio de inferencia en producción de `Kubernetes`.
+- **deployment**: Carpeta donde se almacena el `.YAML` para la creación del despliegue y servicio de `Kubernetes`, así como un tutorial sobre como realizar la contenerización de la aplicación web en una imagen de `Docker` y el posterior despliegue en producción de dicha imagen en un `cluster` de `Kubernetes`.
 
 
 - **img**: Carpeta donde se recopilan un par de imágenes del proyecto.
