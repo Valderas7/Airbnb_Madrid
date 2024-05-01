@@ -1,23 +1,23 @@
 # Librerías
 import streamlit as st
-import mlflow
+import pickle
 import pandas as pd
 
-# Trackea la URL de MLflow
-mlflow.set_tracking_uri('http://127.0.0.1:5000/')
-
-# Título de la Web App
-"## Predicción de alquileres Airbnb en Madrid"
+# Título de la Web App con cabecera H2
+st.markdown("<h2 style='text-align: center; color: black;'> Predicción de alquileres Airbnb en la ciudad de Madrid </h2>",
+            unsafe_allow_html=True)
 
 # Decorador para cachear funciones que devuelven datos, como por ejemplo la inferencia de un modelo de machine learning
 # La función 'load_model' del decorador simplemente carga el modelo de MLflow
 @st.cache_data
 def load_model():
-    model_name = 'models:/decision_tree/1'
-    return mlflow.pyfunc.load_model(model_name)
+    #loaded_model = pickle.load(open('C:/Users/valde/Desktop/Airbnb_Madrid/mlflow/mlartifacts/331952214411143549/'
+                                    #'54cc146b9ebc4590ab12b96f7ad53349/artifacts/model/model.pkl', 'rb'))   # local
+    loaded_model = pickle.load(open('model/model.pkl', 'rb'))                                               # Dockerfile
+    return loaded_model
 
 # Sliders y cajas de selección para seleccionar los valores de las variables de entrada
-square_feet = st.slider("Pies cuadrados", value=5.0, min_value=0.1, max_value=5167.0, step=1.0)
+square_feet = st.slider("Pies cuadrados", value=5.0, min_value=0.1, max_value=5167.0, step=5.0)
 accommodates = st.slider("Habitaciones", value=10, min_value=1, max_value=27, step=1)
 cleaning_fee = st.slider("Tarifa de limpieza", value=20.0, min_value=0.0, max_value=550.0, step=1.0)
 beds = st.slider("Camas", value=10.0, min_value=0.0, max_value=50.0, step=1.0)
@@ -26,7 +26,7 @@ bedrooms = st.slider("Dormitorios", value=2.0, min_value=0.0, max_value=11.0, st
 availability_60 = st.slider("Disponibilidad 60 días/año", value=20, min_value=0, max_value=60, step=1)
 availability_90 = st.slider("Disponibilidad 90 días/año", value=20, min_value=0, max_value=90, step=1)
 availability_365 = st.slider("Disponibilidad 365 días/año", value=20, min_value=0, max_value=365, step=1)
-security_deposit = st.slider("Fianza", value=20.0, min_value=0.0, max_value=4460.0, step=1.0)
+security_deposit = st.slider("Fianza", value=20.0, min_value=0.0, max_value=4460.0, step=5.0)
 bathrooms = st.slider("Cuartos de baño", value=3.0, min_value=0.0, max_value=12.0, step=1.0)
 guests_included = st.slider("Número de huéspedes incluidos", value=1, min_value=1, max_value=16, step=1)
 neighbourhood = st.selectbox("Barrio", ['Acacias', 'Adelfas', 'Almagro', 'Almenara', 'Aluche', 'Arapiles', 'Arganzuela',
@@ -46,15 +46,13 @@ neighbourhood_group_cleansed = st.selectbox("Distrito", ['Arganzuela', 'Barajas'
                                                          'Latina', 'Moncloa - Aravaca', 'Moratalaz', 'Puente de Vallecas',
                                                          'Retiro', 'Salamanca', 'San Blas - Canillejas', 'Tetuán', 'Usera',
                                                          'Vicálvaro', 'Villa de Vallecas', 'Villaverde'])
-property_type = st.selectbox("Tipo de propiedad", ['Apartahotel', 'Apartamento', 'Cobertizo', 'Desayuno y cama',
-                                                   'Hotel boutique', 'Bungalow', 'Camper/RV', 'Casa particular (Cuba)',
-                                                   'Caverna', 'Chalet', 'Condominio', 'Casa domo', 'Casa tierra', 'Granja',
-                                                   'Suite de invitados', 'Casa de invitados', 'Hostal', 'Hotel', 'Casa',
-                                                   'Cabaña', 'Iglú', 'Loft', 'Albergue en naturaleza', 'Otro',
-                                                   'Pensión (Corea del Sur)', 'Servicio de apartamentos', 'Tienda de campaña',
-                                                   'Casa diminuta', 'Adosado', 'Villa', 'Yurta'])
-room_type = st.selectbox("Tipo de habitación", ["Apartamento completo", "Habitación de hotel", "Habitación privada",
-                                                "Habitación compartida"])
+property_type = st.selectbox("Tipo de propiedad", ['Aparthotel', 'Apartment', 'Barn', 'Bed and breakfast', 'Boutique hotel',
+                                                   'Bungalow', 'Camper/RV', 'Casa particular (Cuba)', 'Cave', 'Chalet',
+                                                   'Condominium', 'Dome house', 'Earth house', 'Farm stay', 'Guest suite',
+                                                   'Guesthouse', 'Hostel', 'Hotel', 'House', 'Hut', 'Igloo', 'Loft',
+                                                   'Nature lodge', 'Other', 'Pension (South Korea)', 'Serviced apartment',
+                                                   'Tent', 'Tiny house', 'Townhouse', 'Villa', 'Yurt'])
+room_type = st.selectbox("Tipo de habitación", ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room'])
 amenities = st.slider("Comodidades", value=20, min_value=0, max_value=86, step=1)
 x = st.slider("Coordenada X localización alquiler", value=4834420.0, min_value=4834420.0, max_value=4851910.0, step=5.0)
 y = st.slider("Coordenada Y localización alquiler", value=-326518.0, min_value=-326518.0, max_value=-298892.0, step=5.0)
@@ -77,5 +75,6 @@ model = load_model()
 # Se realiza la predicción con los datos de entrada y el modelo
 prediction = model.predict(input)
 
-# Se imprime la predicción
-f"El precio pronosticado del alquiler es de {round(float(prediction[0]), 2)}$"
+# Se imprime la predicción con una cabecera H4
+st.write("<h4 style='text-align: center; color: black;'> El precio pronosticado del alquiler es de " +
+         str(round(float(prediction[0]), 2)) + "$" + "</h4>", unsafe_allow_html=True)
