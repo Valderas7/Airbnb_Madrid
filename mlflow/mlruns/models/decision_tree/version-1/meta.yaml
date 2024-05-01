@@ -1,8 +1,9 @@
 aliases: []
 creation_timestamp: 1713195628221
 current_stage: None
-description: ''
-last_updated_timestamp: 1713195628221
+description: Árbol de decisión para predecir el precio del alquiler diario en Madrid
+  de los Airbnb
+last_updated_timestamp: 1714562617714
 name: decision_tree
 run_id: 54cc146b9ebc4590ab12b96f7ad53349
 run_link: ''

@@ -1,0 +1,10 @@
+jupyter
+geopandas
+pandas
+mlflow
+seaborn
+matplotlib
+scikit-learn
+numpy
+streamlit
+requests
