@@ -4,4 +4,4 @@ streamlit
 # No se usa esta librería en el código de la APP, pero es necesario para aplicar los pipelines
 scikit-learn
 
-# No hace falta instalar 'picke' porque viene por defecto en el intérprete de Python
+# No hace falta instalar 'pickle' porque viene por defecto en el intérprete de Python

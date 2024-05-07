@@ -1,0 +1,7 @@
+pandas
+fastapi
+
+# No se usa esta librería en el código de la APP, pero es necesario para aplicar los pipelines
+scikit-learn
+
+# No hace falta instalar 'uvicorn' ni 'pydantic' porque viene por defecto en fastapi

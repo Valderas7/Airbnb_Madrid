@@ -8,3 +8,6 @@ scikit-learn
 numpy
 streamlit
 requests
+fastapi
+
+# No hace falta instalar 'uvicorn' ni 'pydantic' porque viene por defecto en fastapi

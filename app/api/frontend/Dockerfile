@@ -4,11 +4,8 @@ FROM python:3.9-slim
 # Directorio dentro de la imagen en el que se está trabajando
 WORKDIR /app
 
-# Se copia el contenido de la carpeta 'app' local (código y 'requirements.txt') al directorio 'app' de la imagen
-COPY app /app
-
-# Se copia el modelo (.pkl) del árbol de decisión de MLflow al directorio 'app/model' de la imagen
-COPY mlflow/mlartifacts/331952214411143549/54cc146b9ebc4590ab12b96f7ad53349/artifacts/model/model.pkl /app/model/model.pkl
+# Se copia el contenido de la carpeta 'frontend' local (código y 'requirements.txt') al directorio 'app' de la imagen
+COPY app/api/frontend ./
 
 # Se actualiza la imagen y se instalan las librerías del 'requirements.txt'
 RUN apt-get update && pip install -r requirements.txt

@@ -69,7 +69,7 @@ input = pd.DataFrame(
              'neighbourhood_group_cleansed', 'property_type', 'room_type', 'amenities', 'X', 'Y', 'Z', 'date']
 )
 
-# Se llama a la función del decorador
+# Se llama a la función del decorador que cachea datos
 model = load_model()
 
 # Se realiza la predicción con los datos de entrada y el modelo
