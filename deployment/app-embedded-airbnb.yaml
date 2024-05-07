@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: app-embedded-airbnb-container
-          image: valderas7/app-embedded-airbnb:v1.1
+          image: valderas7/app-embedded-airbnb:v1.2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8501

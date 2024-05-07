@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Se copia el contenido de la carpeta 'backend' local (código y 'requirements.txt') al directorio 'app' de la imagen
-COPY app/api/backend ./
+COPY app/fullstack/backend/requirements.txt app/fullstack/backend/server.py ./
 
 # Se copia el modelo (.pkl) del árbol de decisión de MLflow al directorio 'app/model' de la imagen
 COPY mlflow/mlartifacts/331952214411143549/54cc146b9ebc4590ab12b96f7ad53349/artifacts/model/model.pkl ./model/model.pkl

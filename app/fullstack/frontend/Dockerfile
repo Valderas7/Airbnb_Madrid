@@ -5,7 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Se copia el contenido de la carpeta 'frontend' local (código y 'requirements.txt') al directorio 'app' de la imagen
-COPY app/api/frontend ./
+COPY app/fullstack/frontend/requirements.txt app/fullstack/frontend/app.py ./
 
 # Se actualiza la imagen y se instalan las librerías del 'requirements.txt'
 RUN apt-get update && pip install -r requirements.txt

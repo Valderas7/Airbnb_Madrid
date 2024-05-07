@@ -7,6 +7,13 @@ import requests
 st.markdown("<h2 style='text-align: center; color: black;'> Predicción de alquileres Airbnb en la ciudad de Madrid </h2>",
             unsafe_allow_html=True)
 
+# Información de que el backend está en un servicio de FastAPI
+st.write('''Obtén los precios pronosticados de los alquileres de Airbnb de la ciudad de Madrid. Esta interfaz de `Streamlit` 
+usa un servicio de `FastAPI` como `backend`. Visita esta URL en `:8000/docs` para ver la documentación.''')
+
+# Este texto vacío es simplemente para crear espacio entre el texto de arriba y el que irá debajo
+st.text("")
+
 # Se guarda en una variable la URL local de la API de FastAPI donde se realizan las peticiones 'POST' al modelo para obtener
 # las predicciones
 api_url = "http://localhost:8000/predict"
@@ -82,6 +89,9 @@ inputs = {
     "z": z,
     "date": date
 }
+
+# Este texto vacío es simplemente para crear espacio entre el texto de arriba y el que irá debajo
+st.text("")
 
 # Si se pulsa el botón de calcular se envía la petición 'POST' a la API
 if st.button('Calcular'):
