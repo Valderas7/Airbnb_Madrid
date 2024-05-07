@@ -32,7 +32,7 @@ A partir de aquí se siguen dos estrategias de despliegue:
 	- **mlartifacts**: Carpeta donde se recopilan todos los `artifacts` generados en las distintas ejecuciones de `MLflow`, es decir, los modelos, sus metadatos, las librerías requeridas para la ejecución de los mismos, etc.
 
 
-- **Informe.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue/productivización (no actualizado).
+- **Informe.pdf**: Informe del análisis exploratorio, de las métricas del modelo y de la propuesta de despliegue.
 
 
 - **train.ipynb**: `Notebook` realizado en Python con el código del análisis exploratorio de datos y de los modelos entrenados para la predicción de los precios diarios, además de los registros de los modelos con `MLflow`.
