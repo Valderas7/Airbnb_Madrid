@@ -1,0 +1,74 @@
+# Se crea el servicio
+apiVersion: v1
+kind: Service
+
+# Nombre del servicio y espacio de Kubernetes donde crear el servicio:
+metadata:
+  name: app-fullstack-airbnb-service
+  namespace: airbnb
+
+spec:
+  # Pods a los que aplicar el servicio: los pods deben tener como etiqueta la clave y el valor especificados en este campo
+  selector:
+    app: app-fullstack-airbnb-pods
+
+  # Dos puertos que tendrá el servicio (3000 para la API; y 3001 para la interfaz gráfica). Evidentemente cada puerto
+  # debe apuntar a los puertos expuestos en las imágenes (8000 en la imagen de FastAPI y 8501 en la imagen de Streamlit)
+  ports:
+    - name: backend
+      protocol: "TCP"
+      port: 3000
+      targetPort: 8000
+      nodePort: 30200
+    - name: frontend
+      protocol: "TCP"
+      port: 3001
+      targetPort: 8501
+      nodePort: 30201
+
+  # Tipo del servicio: Expone el servicio al exterior del cluster balanceando el tráfico entre los pods disponibles
+  type: LoadBalancer
+
+---
+
+# Se crea el despliegue
+apiVersion: apps/v1
+kind: Deployment
+
+# Nombre del despliegue y espacio de Kubernetes donde crear el servicio:
+metadata:
+  name: app-fullstack-airbnb-deployment
+  namespace: airbnb
+
+spec:
+  # Pods a los que aplicar el despliegue: los pods deben tener como etiqueta la clave y el valor especificados en este campo
+  selector:
+    matchLabels:
+      app: app-fullstack-airbnb-pods
+
+  # El despliegue de Kubernetes tendrá 3 replicas o pods
+  replicas: 3
+
+  # Plantilla del despliegue en la que se define la parte de los 'pods'
+  template:
+
+    # En los metadatos se definen las etiquetas de los 'pods'. Deben tener la misma clave y valor que la parte 'selector' del
+    # despliegue y el servicio para que ambos estén enlazados con los pods y viceversa
+    metadata:
+      labels:
+        app: app-fullstack-airbnb-pods
+
+    # Cada 'pod' tiene dos contenedores (uno con la imagen de la API de FastAPI y otro con la imagen de la interfaz
+    # gráfica de Streamlit) con los puertos expuestos en cada una de las imágenes (8000 para la API y 8501 para la UI)
+    spec:
+      containers:
+        - name: app-backend-airbnb-container
+          image: valderas7/app-backend-airbnb:v1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+        - name: app-frontend-airbnb-container
+          image: valderas7/app-frontend-airbnb:v1.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8501
