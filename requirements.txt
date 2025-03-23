@@ -1,7 +1,7 @@
 jupyter
 geopandas
 pandas
-mlflow==2.16.0
+mlflow==2.20.3
 seaborn
 matplotlib
 scikit-learn
